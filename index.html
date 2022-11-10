@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter-App</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        html, body{
+            padding: 0;
+            margin: 0;
+        }
+
+    #container{
+            width: 80% ;
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 100px;
+            box-shadow: 0px 0px 2px black;
+            border-radius: 10px;
+        }
+
+        h1{
+background: black;
+color: white;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+        }
+
+        h1, h2, p{
+text-align: center;
+        }
+
+        #b-container{
+max-width: 70%;
+margin: 0 auto;
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: space-around;
+        }
+
+        button{
+            padding: 4%;
+            border: none;
+            border-radius: 10px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: white;
+        }
+
+
+        #increment-btn{
+            background: green;
+            margin-bottom: 4px;
+            width: 150px;
+            text-align: center;
+        }
+
+        #save-btn{
+            background: brown;
+            width: 150px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+
+    <h1>people counter</h1>  
+    <h2 id="counter">0</h2>
+
+    <div id="b-container">
+    <button id="increment-btn" onclick="increment();">INCREMENT</button>
+    <button id="save-btn" onclick="save();">SAVE</button>
+    </div>
+
+    <p id="para">previuos enries:</p>
+
+    </div>
+<Script>
+let count = 0;
+let countEl = document.getElementById("counter");
+let incBtn = document.getElementById("increment-btn");
+let pElem = document.getElementById("para");
+
+function increment(){
+   count += 1
+   countEl.textContent = count
+};
+
+function save(){
+    let savedEl = count + " - "
+    pElem.textContent += savedEl
+    count = 0
+    countEl.textContent = 0
+
+    
+}
+
+
+</Script>
+
+</body>
+</html>
